@@ -1,0 +1,15 @@
+/*imppor*/
+@import url(./auth.css);
+@import url(./button.css);
+@import url(./form.css);
+
+:root {
+  /*color*/
+  --color-primary: #3F6335;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0px;
+
+}
