@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
   <!--link-->
   <link rel="stylesheet" href="../assets/css/main.css">
 </head>
+
 <body>
   <main class="auth-layout">
     <section class="auth-form-section">
@@ -35,7 +37,7 @@
           <!--terms-->
           <label class="terms-option">
             <input type="checkbox" name"terms">
-              I agree to the
+            I agree to the
             <a href="#">terms & polcy</a>
           </label>
           <!--forgot passwors-->
@@ -44,7 +46,7 @@
           </a>
         </div>
 
-        <button type="submit">Sign Up</button>
+        <button class="submit-btn" type="submit">Sign Up</button>
       </form>
       <!--create account-->
       <div class="auth-footer">
@@ -58,4 +60,5 @@
     </section>
   </main>
 </body>
+
 </html>

@@ -7,9 +7,12 @@
 .auth-form-section {
   flex: 1;
   display: flex;
-  align-items: center;
   justify-content: center;
+  flex-direction: column;
+
 }
+
+
 
 .auth-banner {
   flex: 1;
@@ -19,4 +22,13 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.form-grup {
+  margin-bottom: 24px;
+}
+
+.form-grup label {
+  margin-bottom: 8px;
+  display: block;
 }
