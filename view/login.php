@@ -48,7 +48,7 @@
             <a href="#" class="forgot-password">Forgot password?</a>
           </div>
 
-          <button class="submit-btn" type="submit">Sign Up</button>
+          <button class="submit-btn" type="button" onclick="window.location.href='registere.php'">Sign Up</button>
         </form>
 
         <div class="auth-divider">

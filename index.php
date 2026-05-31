@@ -1,2 +1,12 @@
 <?php
-include 'view/login.php';
+session_start();
+
+// Check if user is already logged in
+if (isset($_SESSION['user_id'])) {
+    header('Location: dashboard.php');
+    exit();
+}
+
+// Redirect to login page
+header('Location: view/login.php');
+exit();
