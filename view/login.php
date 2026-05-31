@@ -7,6 +7,7 @@
   <title>Get Started Now</title>
   <link rel="stylesheet" href="../assets/css/main.css">
 </head>
+
 <body>
   <main class="auth-layout">
     <section class="auth-form-section">

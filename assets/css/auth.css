@@ -48,7 +48,7 @@
   margin-bottom: 8px;
   display: block;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 700;
   color: #1a1a1a;
 }
 
@@ -117,6 +117,7 @@
   color: #666;
   cursor: pointer;
   flex: 1;
+  font-weight: 700;
 }
 
 .terms-option input {
