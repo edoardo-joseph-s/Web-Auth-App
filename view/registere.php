@@ -1,3 +1,13 @@
+<?php
+session_start();
+$registerErrors = $_SESSION['register_errors'] ?? [];
+$registerOld = $_SESSION['register_old'] ?? [];
+$registerSuccess = $_SESSION['register_success'] ?? '';
+unset($_SESSION['register_errors'], $_SESSION['register_old'], $_SESSION['register_success']);
+$escape = static function ($value) {
+  return htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8');
+};
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,6 +32,7 @@
               <input type="text"
                 name="fullname"
                 placeholder="Enter your full name"
+                value="<?php echo $escape($registerOld['fullname'] ?? ''); ?>"
                 required>
             </div>
             <div class="form-grup">
@@ -29,6 +40,7 @@
               <input type="text"
                 name="username"
                 placeholder="Choose a username"
+                value="<?php echo $escape($registerOld['username'] ?? ''); ?>"
                 required>
             </div>
           </div>
@@ -39,12 +51,14 @@
               <input type="email"
                 name="email"
                 placeholder="Enter your email"
+                value="<?php echo $escape($registerOld['email'] ?? ''); ?>"
                 required>
             </div>
             <div class="form-grup">
               <label>Date of Birth</label>
               <input type="date"
                 name="dob"
+                value="<?php echo $escape($registerOld['dob'] ?? ''); ?>"
                 required>
             </div>
           </div>
@@ -85,12 +99,12 @@
 
           <div class="auth-options" style="margin-bottom: 24px; margin-top: 24px;">
             <label class="terms-option">
-              <input type="checkbox" name="terms" required>
+              <input type="checkbox" name="terms" required <?php echo !empty($registerOld['terms']) ? 'checked' : ''; ?>>
               <span>I agree to the <a href="#">terms & policy</a></span>
             </label>
           </div>
 
-          <button class="submit-btn" type="submit">Sign Up</button>
+          <button class="submit-btn" type="submit">Sign In</button>
         </form>
 
         <div class="auth-divider">
@@ -108,7 +122,25 @@
     </section>
   </main>
 
+  <div class="modal-overlay">
+    <div class="modal">
+      <div class="modal-icon">
+        <svg></svg>
+      </div>
+      <h2 class="modal-title"></h2>
+      <p class="modal-message"></p>
+      <button class="modal-button">OK</button>
+    </div>
+  </div>
+
   <script src="../assets/js/auth.js"></script>
+  <?php if (!empty($registerErrors)) : ?>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        AuthModule.showModal('Pendaftaran Gagal', '<?php echo $escape(implode(' ', $registerErrors)); ?>', 'error');
+      });
+    </script>
+  <?php endif; ?>
 </body>
 
 </html>
